@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Ascii {
     public static void main(String[] args) {
-        String str = "ABC";
+        String str = "CACA";
         List<Integer> sb = new ArrayList<Integer>();
 
         char[] letters = str.toCharArray();
