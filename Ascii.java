@@ -1,13 +1,16 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Ascii {
     public static void main(String[] args) {
         String str = "ABC";
-        StringBuilder sb = new StringBuilder();
+        List<Integer> sb = new ArrayList<Integer>();
 
         char[] letters = str.toCharArray();
         for (char ch : letters) {
-            sb.append((int) ch).append(" ");
+            sb.add((int) ch);
         }
 
-        System.out.println(sb.toString());
+        System.out.println(sb);
     }
 }
