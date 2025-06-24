@@ -1,8 +1,7 @@
 
 import java.util.Scanner;
 
-class ASCIItoHEX {
-
+public class ASCIItoHEX {
     public static String ASCIItoHEX(String ascii)
     {
         String hex = "";
@@ -16,7 +15,6 @@ class ASCIItoHEX {
         return hex;
     }
 
-    
     public static void main(String arg[])
     {
         // print the Hex String

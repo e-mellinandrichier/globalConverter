@@ -1,16 +1,16 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Ascii {
-    public static void main(String[] args) {
-        String str = "CACA";
+public class ASCII {
+    public static List<Integer> ASCII(String ascii)
+    {
         List<Integer> sb = new ArrayList<Integer>();
 
-        char[] letters = str.toCharArray();
+        char[] letters = ascii.toCharArray();
         for (char ch : letters) {
             sb.add((int) ch);
         }
 
-        System.out.println(sb);
+        return sb;
     }
 }
