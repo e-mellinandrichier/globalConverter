@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ASCII {
-    public static List<Integer> ASCII(String ascii)
+    public static List<Integer> asciiTranslator(String ascii)
     {
         List<Integer> sb = new ArrayList<Integer>();
 
@@ -10,7 +10,6 @@ public class ASCII {
         for (char ch : letters) {
             sb.add((int) ch);
         }
-
         return sb;
     }
 }

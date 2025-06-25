@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.List;
+
 
 public class main {
 	public static void main(String[] args) {
@@ -6,12 +8,11 @@ public class main {
         Scanner console = new Scanner(System.in);
 		System.out.println("GLOBAL CONVERTER");
         startingString = console.nextLine();
-
         if (args.length <= 0) {
-			System.out.println("No command line arguments found.");
+			System.out.println("Please enter a correct line.");
 	    }
-        if (args[1] == "-h") {
+        List<Integer> askip = ASCII.asciiTranslator(startingString);
+        System.out.println(askip);
 
-        }
     }
 }
