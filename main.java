@@ -12,7 +12,6 @@ public class main {
 			System.out.println("Please enter a correct line.");
 	    }
         List<Integer> askip = ASCII.asciiTranslator(startingString);
-        System.out.println(askip);
-
+        ASCIIToBinary.translateAll(askip);
     }
 }
