@@ -18,14 +18,13 @@ public class ASCIIToBinary {
                 binary.add(0);
                 ascii /= 2;
             }
-        } 
+        }
         Collections.reverse(binary);
         System.out.println(binary + " ");
     }
 
     public static void translateAll(List<Integer> list) {
         for (Integer number : list) {
-            // System.out.print("Décimal : " + number + " → Binaire : ");
             binaryTranslator(number);
         }
     }

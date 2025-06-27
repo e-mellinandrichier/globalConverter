@@ -1,7 +1,6 @@
 import java.util.Scanner;
 import java.util.List;
 
-
 public class main {
 	public static void main(String[] args) {
         String startingString;
@@ -12,6 +11,6 @@ public class main {
 			System.out.println("Please enter a correct line.");
 	    }
         List<Integer> askip = ASCII.asciiTranslator(startingString);
-        ASCIIToBinary.translateAll(askip);
+        ASCIItoHEX.translateAll(askip);
     }
 }
