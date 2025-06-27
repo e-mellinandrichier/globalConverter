@@ -1,7 +1,5 @@
 
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.List;
 
 public class ASCIItoHEX {
@@ -20,15 +18,17 @@ public class ASCIItoHEX {
             
         }
         if ( letter2 == 'J') {
-            System.out.println(hex2+ " "+ hex);
+            System.out.print(hex2);
+            System.out.print(hex + " ");
         }
         if (letter2 != 'J') {
-            System.out.println(hex2+ " "+ letter2);
+            System.out.print(hex2);
+            System.out.print(letter2 + " ");
         }
     }
 
-    public static void translateAll(List<Integer> list) {
-        for (Integer number : list) {
+    public static void translateAll(int[] list) {
+        for (int number : list) {
             hexTranslator(number);
         }
     }

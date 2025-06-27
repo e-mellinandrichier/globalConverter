@@ -1,15 +1,19 @@
-import java.util.ArrayList;
-import java.util.List;
 
 public class ASCII {
-    public static List<Integer> asciiTranslator(String ascii)
-    {
-        List<Integer> sb = new ArrayList<Integer>();
+    public static int[] asciiTranslator(String ascii) {
+        int length = ascii.length();
+        int[] result = new int[length];
 
-        char[] letters = ascii.toCharArray();
-        for (char ch : letters) {
-            sb.add((int) ch);
+        for (int i = 0; i < length; i++) {
+            result[i] = (int) ascii.charAt(i);
         }
-        return sb;
+
+        return result;
+    }
+
+    public static void iWantDecimal(int[] ascii) {
+        for (int i = 0; i < ascii.length; i++) {
+            System.out.print(ascii[i] + " ");
+        }
     }
 }
