@@ -11,6 +11,6 @@ public class main {
 			System.out.println("Please enter a correct line.");
 	    }
         List<Integer> askip = ASCII.asciiTranslator(startingString);
-        ASCIItoHEX.translateAll(askip);
+        ASCIIToOctal.translateAll(askip);
     }
 }

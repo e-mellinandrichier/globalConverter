@@ -7,7 +7,6 @@ import java.util.List;
 public class ASCIItoHEX {
     public static void hexTranslator(int  ascii)
     {
-        // List<Character> letterList = Arrays.asList('A', 'B', 'C', 'D', 'E', 'F');
         int hex = ascii % 16;
         ascii -= hex;
         int hex2 = ascii / 16;
