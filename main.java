@@ -1,4 +1,4 @@
-
+import java.util.Scanner; 
 
 public class main {
 	public static void main(String[] args) {
@@ -23,5 +23,14 @@ public class main {
         if (base.equals("decimal") || base.equals("-d")) {
             ASCII.iWantDecimal(askip);
         }
+    Scanner sc = new Scanner(System.in);
+    System.out.println("\nGo back ? (Y/N)");
+    String str = sc.nextLine();
+    if (str.equals("Y")) {
+        System.out.println(args[1]);
+    }
+    else {
+        System.exit(0);
+    }
     }
 }
