@@ -6,12 +6,16 @@ public class main {
         if (args.length <= 0) {
 			System.out.println("Please enter a correct line.");
 	    }
+
         String base = args[0];
         String startingString = args[1];
+        int key = Integer.parseInt(args[2]);
         
+    
         int[] askip = ASCII.asciiTranslator(startingString);
 
         if (base.equals("hexadecimal") || base.equals("-h")) {
+
             ASCIItoHEX.translateAll(askip);
         }
         if (base.equals("binary") || base.equals("-b")) {
@@ -21,16 +25,18 @@ public class main {
             ASCIIToOctal.translateAll(askip);
         }
         if (base.equals("decimal") || base.equals("-d")) {
-            ASCII.iWantDecimal(askip);
+            int[] cryptic = ASCII.cesar(startingString, key);
+            ASCII.iWantDecimal(cryptic);
+            // ASCII.iWantDecimal(askip);
         }
     Scanner sc = new Scanner(System.in);
-    System.out.println("\nGo back ? (Y/N)");
+    System.out.println("\nGo back ? (y/n)");
     String str = sc.nextLine();
-    if (str.equals("Y")) {
+    if (str.equals("y")) {
         System.out.println(args[1]);
     }
     else {
         System.exit(0);
     }
-    }
+    }               
 }

@@ -1,7 +1,4 @@
 
-
-import java.util.List;
-
 public class ASCIItoHEX {
     public static void hexTranslator(int  ascii)
     {

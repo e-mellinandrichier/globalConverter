@@ -16,4 +16,12 @@ public class ASCII {
             System.out.print(ascii[i] + " ");
         }
     }
+
+    public static int[] cesar(String ascii, int key) {
+        int[] deci = asciiTranslator(ascii);
+        for (int i = 0; i < deci.length; i++) {
+            deci[i] += key;
+        }
+        return deci;
+    }
 }
