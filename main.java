@@ -14,7 +14,25 @@ public class main {
             int key = Integer.parseInt(args[2]);
             askip = ASCII.cesar(startingString, key);
         }
+        verify(base, askip);
+        change(askip);
 
+    // else {
+    //     System.exit(0);
+    // }
+    }      
+    public static void change(int[] askip) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("\nDo you wish to change base ? (-h, -o, -d, -t, -b)");
+        String str = sc.nextLine();
+        if (str.equals("-h") || str.equals("-o") || str.equals("-d") || str.equals("-t") || str.equals("-b")) {
+            verify(str, askip);
+        } else {
+            System.out.println("Invalid option. Please choose among -h, -o, -d, -t, or -b.");
+        }
+    }
+
+    public static void verify(String base, int[] askip) {
         if (base.equals("hexadecimal") || base.equals("-h")) {
             for (int number : askip) {
                 System.out.print(ASCIItoHEX.hexTranslator(number) +" ");
@@ -35,15 +53,8 @@ public class main {
         if (base.equals("decimal") || base.equals("-d")) {
             ASCII.iWantDecimal(askip);
         }
-
-    Scanner sc = new Scanner(System.in);
-    System.out.println("\nDo you wish to change base ? (-h, -o, -d, -t, -b)");
-    String str = sc.nextLine();
-    if (str.equals("-t")) {
-        
+        if (base.equals("text") || base.equals("-t")) {
+            System.out.print(ASCIIToText.backToText(askip));
+        }
     }
-    // else {
-    //     System.exit(0);
-    // }
-    }               
 }
