@@ -1,16 +1,26 @@
-import java.util.ArrayList;
-import java.util.List;
 
-public class Ascii {
-    public static void main(String[] args) {
-        String str = "ABC";
-        List<Integer> sb = new ArrayList<Integer>();
+public class ASCII {
+    public static int[] asciiTranslator(String ascii) {
+        int length = ascii.length();
+        int[] result = new int[length];
 
-        char[] letters = str.toCharArray();
-        for (char ch : letters) {
-            sb.add((int) ch);
+        for (int i = 0; i < length; i++) {
+            result[i] = (int) ascii.charAt(i);
         }
+        return result;
+    }
 
-        System.out.println(sb);
+    public static void iWantDecimal(int[] ascii) {
+        for (int i = 0; i < ascii.length; i++) {
+            System.out.print(ascii[i] + " ");
+        }
+    }
+
+    public static int[] cesar(String ascii, int key) {
+        int[] deci = asciiTranslator(ascii);
+        for (int i = 0; i < deci.length; i++) {
+            deci[i] += key;
+        }
+        return deci;
     }
 }
