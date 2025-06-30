@@ -1,42 +1,75 @@
-import java.util.Scanner; 
+import java.util.Scanner;
+
+import src.ASCII;
+import src.ASCIIToBinary;
+import src.ASCIIToOctal;
+import src.ASCIItoHEX;
 
 public class main {
-	public static void main(String[] args) {
-		System.out.println("GLOBAL CONVERTER");
-        if (args.length <= 0) {
-			System.out.println("Please enter a correct line.");
-	    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-        String base = args[0];
-        String startingString = args[1];
-        int key = Integer.parseInt(args[2]);
-        
-    
-        int[] askip = ASCII.asciiTranslator(startingString);
+        System.out.println("=== GLOBAL CONVERTER ===");
 
-        if (base.equals("hexadecimal") || base.equals("-h")) {
+        boolean running = true;
 
-            ASCIItoHEX.translateAll(askip);
+        while (running) {
+            // 1. Choix de la base
+            System.out.print("Choisissez une base (-h, -b, -o, -d, -t) : ");
+            String base = scanner.nextLine();
+
+            // 2. Chaîne à convertir
+            System.out.print("Entrez une chaîne à convertir : ");
+            String input = scanner.nextLine();
+
+            // 3. Clé de chiffrement
+            System.out.print("Entrez la clé pour le chiffrement César (ex: 3) : ");
+            int key = Integer.parseInt(scanner.nextLine());
+
+            // 4. Conversion en tableau ASCII
+            int[] asciiCodes = ASCII.asciiTranslator(input);
+
+            // 5. Traitement selon la base
+            switch (base) {
+                case "-h":
+                case "hexadecimal":
+                    ASCIItoHEX.translateAll(asciiCodes);
+                    break;
+
+                case "-b":
+                case "binary":
+                    ASCIIToBinary.translateAll(asciiCodes);
+                    break;
+
+                case "-o":
+                case "octal":
+                    ASCIIToOctal.translateAll(asciiCodes);
+                    break;
+
+                case "-d":
+                case "decimal":
+                    int[] encrypted = ASCII.cesar(input, key);
+                    ASCII.iWantDecimal(encrypted);
+                    break;
+
+                case "-t":
+                case "text":
+                    System.out.println(input);
+                    break;
+
+                default:
+                    System.out.println("❌ Base invalide.");
+            }
+
+            // 6. Recommencer ?
+            System.out.print("\nRecommencer ? (y/n) : ");
+            String again = scanner.nextLine();
+            if (!again.equalsIgnoreCase("y")) {
+                running = false;
+                System.out.println("Bye !");
+            }
         }
-        if (base.equals("binary") || base.equals("-b")) {
-            ASCIIToBinary.translateAll(askip);
-        }
-        if (base.equals("octal") || base.equals("-o")) {
-            ASCIIToOctal.translateAll(askip);
-        }
-        if (base.equals("decimal") || base.equals("-d")) {
-            int[] cryptic = ASCII.cesar(startingString, key);
-            ASCII.iWantDecimal(cryptic);
-            // ASCII.iWantDecimal(askip);
-        }
-    Scanner sc = new Scanner(System.in);
-    System.out.println("\nGo back ? (y/n)");
-    String str = sc.nextLine();
-    if (str.equals("y")) {
-        System.out.println(args[1]);
+
+        scanner.close();
     }
-    else {
-        System.exit(0);
-    }
-    }               
 }
