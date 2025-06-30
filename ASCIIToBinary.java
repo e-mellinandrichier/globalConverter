@@ -1,4 +1,6 @@
+
 public class ASCIIToBinary {
+    // Converts an ASCII value to its binary representation as an array of integers
     public static int[] binaryTranslator(Integer ascii) {
         int temp = ascii;
         int size = 0;
@@ -14,6 +16,7 @@ public class ASCIIToBinary {
         int[] binary = new int[size];
         int index = 0;
 
+        // Convert the ASCII value to binary
         while (ascii > 0) {
             if (ascii % 2 == 1) {
                 binary[index++] = 1;
@@ -27,6 +30,7 @@ public class ASCIIToBinary {
         return binary;
     }
 
+    // Converts an array of binary integers to a string representation
     public static String binaryToString(int[] binary) {
         String result = "";
         for (int i = binary.length - 1; i >= 0; i--) {

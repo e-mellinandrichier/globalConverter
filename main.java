@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class main {
+    // Main method to run the global converter
     public static void main(String[] args) {
         System.out.println("GLOBAL CONVERTER");
         if (args.length < 2) {
@@ -53,7 +54,7 @@ public class main {
         }
         sc.close();
     }
-
+    // Method to change the base of the translation
     public static void change(int[] translateToInt) {
         Scanner sc = new Scanner(System.in);
         System.out.println("\nDo you want to change the base? (-h, -o, -d, -t, -b)");
@@ -66,6 +67,7 @@ public class main {
         }
     }
 
+    // Method to verify the base and print the corresponding translation
     public static void verify(String base, int[] translateToInt) {
         if (base.equals("hexadecimal") || base.equals("-h")) {
             for (int number : translateToInt) {

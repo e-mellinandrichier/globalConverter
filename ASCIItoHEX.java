@@ -1,4 +1,6 @@
+
 public class ASCIItoHEX {
+    // Converts an ASCII value to its hexadecimal representation as a string
     public static String hexTranslator(int ascii)
     {
         int hex = ascii % 16;
@@ -7,6 +9,7 @@ public class ASCIItoHEX {
         char letter2 = 'J';
         String hexaString = "";
 
+    
         if (hex > 9 && hex < 17) {
             int hex3 = hex;
             hex3 -= 10;
@@ -22,6 +25,7 @@ public class ASCIItoHEX {
         return hexaString;
     }
 
+    // Converts an array of ASCII values to their hexadecimal representations
     public static void translateAll(int[] list) {
         for (int number : list) {
             hexTranslator(number);

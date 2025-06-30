@@ -1,4 +1,6 @@
+
 public class ASCIIToOctal {
+    // Converts an ASCII value to its octal representation as an array of integers
     public static int[] octalTranslator(int ascii) {
         int temp = ascii;
         int size = 0;
@@ -11,6 +13,7 @@ public class ASCIIToOctal {
             }
         }
 
+        // Create an array to hold the octal digits
         int[] octal = new int[size];
         int index = 0;
 
@@ -22,6 +25,7 @@ public class ASCIIToOctal {
         }
         return octal;
     }
+    // Converts an array of octal integers to a string representation
     public static String octalToString(int[] octal) {
         String result = "";
         for (int i = octal.length - 1; i >= 0; i--) {

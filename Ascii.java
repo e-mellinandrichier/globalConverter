@@ -1,5 +1,6 @@
 
 public class ASCII {
+    // Converts an ASCII string to an array of integers representing the ASCII values
     public static int[] asciiTranslator(String ascii) {
         int length = ascii.length();
         int[] result = new int[length];
@@ -10,12 +11,14 @@ public class ASCII {
         return result;
     }
 
+    // Converts an array of ASCII values to a string representation
     public static void iWantDecimal(int[] ascii) {
         for (int i = 0; i < ascii.length; i++) {
             System.out.print(ascii[i] + " ");
         }
     }
 
+    // Converts an ASCII string to an array of integers representing the ASCII values
     public static int[] cesar(String ascii, int key) {
         int[] deci = asciiTranslator(ascii);
         for (int i = 0; i < deci.length; i++) {
