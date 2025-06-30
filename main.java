@@ -1,6 +1,11 @@
-import java.util.Scanner; 
+import src.Ascii;
+import src.ASCIIToBinary;
+import src.ASCIItoHEX;
+import src.ASCIIToOctal;
 
-public class main {
+import java.util.Scanner;
+
+public class Main {
 	public static void main(String[] args) {
 		System.out.println("GLOBAL CONVERTER");
         if (args.length <= 0) {
@@ -12,7 +17,7 @@ public class main {
         int key = Integer.parseInt(args[2]);
         
     
-        int[] askip = ASCII.asciiTranslator(startingString);
+        int[] askip = Ascii.asciiTranslator(startingString);
 
         if (base.equals("hexadecimal") || base.equals("-h")) {
 
@@ -25,9 +30,8 @@ public class main {
             ASCIIToOctal.translateAll(askip);
         }
         if (base.equals("decimal") || base.equals("-d")) {
-            int[] cryptic = ASCII.cesar(startingString, key);
-            ASCII.iWantDecimal(cryptic);
-            // ASCII.iWantDecimal(askip);
+            int[] cryptic = Ascii.cesar(startingString, key);
+            Ascii.iWantDecimal(cryptic);
         }
     Scanner sc = new Scanner(System.in);
     System.out.println("\nGo back ? (y/n)");

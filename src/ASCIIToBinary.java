@@ -1,7 +1,4 @@
-import java.util.Scanner;
-
-
-
+package src;
 public class ASCIIToBinary {
     public static void binaryTranslator(Integer ascii) {
         int temp = ascii;

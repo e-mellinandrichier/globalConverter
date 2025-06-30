@@ -1,7 +1,7 @@
+package src;
 public class ASCIIToOctal {
 
     public static void octalTranslator(Integer ascii) {
-        // Calcul de la taille nécessaire
         int temp = ascii;
         int size = 0;
         if (temp == 0) {

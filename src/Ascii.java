@@ -1,5 +1,6 @@
+package src;
 
-public class ASCII {
+public class Ascii {
     public static int[] asciiTranslator(String ascii) {
         int length = ascii.length();
         int[] result = new int[length];
