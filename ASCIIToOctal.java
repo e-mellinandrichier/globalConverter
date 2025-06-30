@@ -23,10 +23,10 @@ public class ASCIIToOctal {
         return octal;
     }
     public static String octalToString(int[] octal) {
-        StringBuilder sb = new StringBuilder();
+        String result = "";
         for (int i = octal.length - 1; i >= 0; i--) {
-            sb.append(octal[i]);
+            result += octal[i];
         }
-        return sb.toString();
+        return result;
     }
 }

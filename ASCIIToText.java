@@ -1,10 +1,9 @@
 public class ASCIIToText {
-    public static String backToText(int[] asciiCodes) {
-        StringBuilder sb = new StringBuilder();
-        for (int code : asciiCodes) {
-            sb.append((char) code);
+    public static String backToText(int[] ascii) {
+        String result = "";
+        for (int code : ascii) {
+            result += (char) code;
         }
-        return sb.toString();
+        return result;
     }
-
 }

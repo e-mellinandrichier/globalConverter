@@ -1,4 +1,3 @@
-
 public class ASCIIToBinary {
     public static int[] binaryTranslator(Integer ascii) {
         int temp = ascii;
@@ -29,12 +28,10 @@ public class ASCIIToBinary {
     }
 
     public static String binaryToString(int[] binary) {
-        StringBuilder sb = new StringBuilder();
+        String result = "";
         for (int i = binary.length - 1; i >= 0; i--) {
-            sb.append(binary[i]);
+            result += binary[i];
         }
-        return sb.toString();
+        return result;
     }
-
 }
-

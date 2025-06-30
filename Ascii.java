@@ -7,7 +7,6 @@ public class ASCII {
         for (int i = 0; i < length; i++) {
             result[i] = (int) ascii.charAt(i);
         }
-
         return result;
     }
 
