@@ -1,3 +1,4 @@
+package src;
 public class backToText {
     // en premier, on regarde de quel type c'est (ça sera vérifié dans le main ça)
     // ensuite, on fait une fonction pour chaque (hex vers dec, oct ver dec etc...)

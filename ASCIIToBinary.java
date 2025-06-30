@@ -1,3 +1,4 @@
+package src;
 
 public class ASCIIToBinary {
     public static int[] binaryTranslator(Integer ascii) {

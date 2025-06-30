@@ -1,4 +1,9 @@
-import java.util.Scanner; 
+import java.util.Scanner;
+
+import src.ASCII;
+import src.ASCIIToBinary;
+import src.ASCIIToOctal;
+import src.ASCIItoHEX; 
 
 public class main {
 	public static void main(String[] args) {

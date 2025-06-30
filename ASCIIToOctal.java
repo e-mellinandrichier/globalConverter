@@ -1,3 +1,4 @@
+package src;
 public class ASCIIToOctal {
     public static int[] octalTranslator(int ascii) {
         int temp = ascii;

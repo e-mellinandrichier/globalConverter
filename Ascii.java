@@ -1,3 +1,4 @@
+package src;
 
 public class ASCII {
     public static int[] asciiTranslator(String ascii) {
