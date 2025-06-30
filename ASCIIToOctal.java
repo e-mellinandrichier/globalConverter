@@ -1,7 +1,5 @@
 public class ASCIIToOctal {
-
-    public static void octalTranslator(Integer ascii) {
-        // Calcul de la taille nécessaire
+    public static int[] octalTranslator(int ascii) {
         int temp = ascii;
         int size = 0;
         if (temp == 0) {
@@ -22,17 +20,13 @@ public class ASCIIToOctal {
             ascii = quo;
             octal[index++] = rem;
         }
-
-        for (int i = size - 1; i >= 0; i--) {
-            System.out.print(octal[i]);
-        }
-        System.out.print(" ");
-        
+        return octal;
     }
-
-    public static void translateAll(int[] list) {
-        for (int number : list) {
-            octalTranslator(number);
+    public static String octalToString(int[] octal) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = octal.length - 1; i >= 0; i--) {
+            sb.append(octal[i]);
         }
+        return sb.toString();
     }
 }

@@ -1,9 +1,6 @@
-import java.util.Scanner;
-
-
 
 public class ASCIIToBinary {
-    public static void binaryTranslator(Integer ascii) {
+    public static int[] binaryTranslator(Integer ascii) {
         int temp = ascii;
         int size = 0;
         if (temp == 0) {
@@ -28,17 +25,16 @@ public class ASCIIToBinary {
                 ascii /= 2;
             }
         }
-
-        for (int i = size - 1; i >= 0; i--) {
-            System.out.print(binary[i]);
-        }
-        System.out.print(" ");
+        return binary;
     }
 
-    public static void translateAll(int[] list) {
-        for (int number : list) {
-            binaryTranslator(number);
+    public static String binaryToString(int[] binary) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = binary.length - 1; i >= 0; i--) {
+            sb.append(binary[i]);
         }
+        return sb.toString();
     }
+
 }
 

@@ -9,34 +9,41 @@ public class main {
 
         String base = args[0];
         String startingString = args[1];
-        int key = Integer.parseInt(args[2]);
-        
-    
         int[] askip = ASCII.asciiTranslator(startingString);
+        if (args.length == 3) {
+            int key = Integer.parseInt(args[2]);
+            askip = ASCII.cesar(startingString, key);
+        }
 
         if (base.equals("hexadecimal") || base.equals("-h")) {
-
-            ASCIItoHEX.translateAll(askip);
+            for (int number : askip) {
+                System.out.print(ASCIItoHEX.hexTranslator(number) +" ");
+            }
         }
         if (base.equals("binary") || base.equals("-b")) {
-            ASCIIToBinary.translateAll(askip);
+            for (int number : askip) {
+                int[] octal = ASCIIToBinary.binaryTranslator(number);
+                System.out.print(ASCIIToBinary.binaryToString(octal) + " ");
+            }
         }
         if (base.equals("octal") || base.equals("-o")) {
-            ASCIIToOctal.translateAll(askip);
+            for (int number : askip) {
+                int[] octal = ASCIIToOctal.octalTranslator(number);
+                System.out.print(ASCIIToOctal.octalToString(octal) + " ");
+            }
         }
         if (base.equals("decimal") || base.equals("-d")) {
-            int[] cryptic = ASCII.cesar(startingString, key);
-            ASCII.iWantDecimal(cryptic);
-            // ASCII.iWantDecimal(askip);
+            ASCII.iWantDecimal(askip);
         }
+
     Scanner sc = new Scanner(System.in);
-    System.out.println("\nGo back ? (y/n)");
+    System.out.println("\nDo you wish to change base ? (-h, -o, -d, -t, -b)");
     String str = sc.nextLine();
-    if (str.equals("y")) {
-        System.out.println(args[1]);
+    if (str.equals("-t")) {
+        
     }
-    else {
-        System.exit(0);
-    }
+    // else {
+    //     System.exit(0);
+    // }
     }               
 }
